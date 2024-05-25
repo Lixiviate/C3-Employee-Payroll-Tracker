@@ -3,14 +3,16 @@ const addEmployeesBtn = document.querySelector("#add-employees-btn");
 
 // Collect employee data
 const collectEmployees = function () {
-  // TODO: Get user input to create and return an array of employee objects
+  // Empty array to store employee objects
   const employees = [];
 
+  // Loop to collect employee data
   while (confirm("Would you like to add an employee?")) {
     const firstName = prompt("Please enter the employees first name:");
     const lastName = prompt("Please enter the employees last name:");
     const salary = prompt("Please enter the salary of the employee:");
 
+    // Create employee object and add to array
     const employee = {
       firstName: firstName,
       lastName: lastName,
@@ -19,6 +21,7 @@ const collectEmployees = function () {
     employees.push(employee);
   }
 
+  // Sort employees by last name
   return employees.sort(function (a, b) {
     return a.lastName.localeCompare(b.lastName);
   });
@@ -26,14 +29,18 @@ const collectEmployees = function () {
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
-  // TODO: Calculate and display the average salary
   let totalSalary = 0;
+
+  // loop through employees to calculate total salary
   for (let i = 0; i < employeesArray.length; i++) {
     let salary = employeesArray[i].salary;
     totalSalary = totalSalary + salary;
   }
+
+  // Calculate average salary
   const averageSalary = totalSalary / employeesArray.length;
 
+  // Display average salary of employees in console
   return console.log(
     `The average employee salary between our ${employeesArray.length} employee(s) is ${averageSalary}`
   );
@@ -41,9 +48,11 @@ const displayAverageSalary = function (employeesArray) {
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
-  // TODO: Select and display a random employee
+  // Selects a random employee from the employees array
   const randomEmployee =
     employeesArray[Math.floor(Math.random() * employeesArray.length)];
+
+  // Display random drawing winner in console
   return console.log(
     `Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`
   );
