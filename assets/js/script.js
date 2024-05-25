@@ -10,11 +10,12 @@ const collectEmployees = function () {
     const firstName = prompt("Please enter the employees first name:");
     const lastName = prompt("Please enter the employees last name:");
     const salary = prompt("Please enter the salary of the employee:");
+    const formatSalary = new Intl.NumberFormat("en-US").format(salary);
 
     const employee = {
       firstName: firstName,
       lastName: lastName,
-      salary: salary,
+      salary: `$ ${formatSalary}`,
     };
     employees.push(employee);
   }
