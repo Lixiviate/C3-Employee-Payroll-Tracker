@@ -10,12 +10,11 @@ const collectEmployees = function () {
     const firstName = prompt("Please enter the employees first name:");
     const lastName = prompt("Please enter the employees last name:");
     const salary = prompt("Please enter the salary of the employee:");
-    const formatSalary = new Intl.NumberFormat("en-US").format(salary);
 
     const employee = {
       firstName: firstName,
       lastName: lastName,
-      salary: salary,
+      salary: parseFloat(salary),
     };
     employees.push(employee);
   }
@@ -29,9 +28,13 @@ const displayAverageSalary = function (employeesArray) {
   for (let i = 0; i < employeesArray.length; i++) {
     let salary = employeesArray[i].salary;
     totalSalary = totalSalary + salary;
+    console.log(totalSalary);
   }
   const averageSalary = totalSalary / employeesArray.length;
-  return console.log(averageSalary);
+  console.log(averageSalary);
+  return console.log(
+    `The average employee salary between our ${employeesArray.length} employee(s) is ${averageSalary}`
+  );
 };
 
 // Select a random employee
