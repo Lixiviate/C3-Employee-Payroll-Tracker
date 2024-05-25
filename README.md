@@ -13,7 +13,7 @@ Payroll management application with responsive UI to view and manage payroll dat
 
 ## Deployed Page
 
-[Deployed GitHub Page]()
+[Deployed GitHub Page](https://lixiviate.github.io/C3-Employee-Payroll-Tracker/)
 
 ![Example Screenshot](./assets/images/example.png)
 
